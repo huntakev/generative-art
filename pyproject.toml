@@ -1,3 +1,28 @@
+[tool.ruff]
+include = ["**/*.py", "**/*.pyi", "**/pyproject.toml"]
+
+[tool.ruff.lint]
+select = ["ALL"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.pyright]
+include = ["src"]
+exclude = ["**/node_modules",
+    "**/__pycache__",
+    "src/experimental",
+    "src/typestubs"
+]
+strict = ["src"]
+
+[tool.pdm.scripts]
+ruff = "ruff check"
+pyright = "pyright"
+test = "pytest"
+lint.composite = ["ruff", "pyright"]
+all.composite = ["lint", "test"]
+
 [project]
 name = "generative-art"
 version = "0.1.0"
