@@ -19,3 +19,6 @@ lint = [
     "ruff==0.8.3",
     "pyright==1.1.390",
 ]
+test = [
+    "pytest==8.3.4",
+]
