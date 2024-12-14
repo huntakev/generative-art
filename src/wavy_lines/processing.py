@@ -5,7 +5,7 @@ from pathlib import Path
 def main() -> None: 
     # Read the original image
     current_filepath = Path(__file__)
-    image_filepath = current_filepath.parent / 'test.jpg'
+    image_filepath = current_filepath.parent / 'tiger.jpg'
     img = cv2.imread(str(image_filepath)) 
     # Display original image
     cv2.imshow('Original', img)
