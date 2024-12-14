@@ -17,11 +17,13 @@ exclude = ["**/node_modules",
 strict = ["src"]
 
 [tool.pdm.scripts]
+processing = "src/wavy_lines/processing.py"
 ruff = "ruff check"
 pyright = "pyright"
 test = "pytest"
 lint.composite = ["ruff", "pyright"]
 all.composite = ["lint", "test"]
+
 
 [project]
 name = "generative-art"
@@ -30,7 +32,7 @@ description = "Default template for PDM package"
 authors = [
     {name = "Kevin Hunt", email = "huntakev@gmail.com"},
 ]
-dependencies = ["opencv-python==4.10.0.84"]
+dependencies = ["opencv-python==4.10.0.84", "numpy==2.2.0"]
 requires-python = "==3.12.*"
 readme = "README.md"
 license = {text = "MIT"}
